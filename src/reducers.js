@@ -11,11 +11,12 @@ const initialStateSearch = {
 
 // Initial states are read-only.
 // Therefore, as a user searches for a robot, the value of the text is stored in
-// a version of the initial state, thus chaning the state.
+// a version of the initial state, thus changing the state.
 export const searchRobots = (state=initialStateSearch, action={}) => {
 	switch(action.type) {
 		case CHANGE_SEARCH_FIELD:
 			return Object.assign({}, state, {searchField: action.payload});
+			// Alt. way: {...state, {searchField: action.payload}}
 		default:
 			return state;
 	}

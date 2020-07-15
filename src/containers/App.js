@@ -10,7 +10,7 @@ import './App.css'
 
 import { setSearchField, requestRobots } from '../actions';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
 	return {
 		// aka state.searchRobots.searchField
 		searchField: state.searchRobots.searchField,
@@ -32,13 +32,13 @@ class App extends Component {
 	componentDidMount() {
 		this.props.onRequestRobots();
 	}
-	
+
 	render() {
 		const { searchField, onSearchChange, robots, isPending } = this.props;
 		const filteredRobots = robots.filter(robot => {
 			return robot.name.toLowerCase().includes(searchField.toLowerCase());
 		})
-		
+
 		return isPending ?
 			<h1>Loading</h1> :
 			(
