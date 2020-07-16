@@ -12,7 +12,8 @@ import { setSearchField, requestRobots } from '../actions';
 
 const mapStateToProps = (state) => {
 	return {
-		// aka state.searchRobots.searchField
+		// aka state.searchField if only one reducer was in the store.
+		// Comes from the reducer, which is from the store.
 		searchField: state.searchRobots.searchField,
 		robots: state.requestRobots.robots,
 		isPending: state.requestRobots.pending,
@@ -20,6 +21,7 @@ const mapStateToProps = (state) => {
 	}
 }
 
+// Used to send actions. Flux pattern.
 const mapDispatchToProps = (dispatch) => {
 	return {
 		onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
