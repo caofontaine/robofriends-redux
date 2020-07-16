@@ -10,6 +10,7 @@ import * as serviceWorker from './serviceWorker';
 import { searchRobots, requestRobots } from './reducers';
 import 'tachyons';
 
+// Create the logger.
 const logger = createLogger();
 const rootReducer = combineReducers({searchRobots, requestRobots});
 const store = createStore(rootReducer, applyMiddleware(thunkMiddleware, logger));
