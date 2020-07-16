@@ -12,6 +12,8 @@ export const setSearchField = (text) => ({
 	payload: text
 })
 
+// Higher order function. 23:29 to watch again.
+// Redux thunk is listening for actions that return functions, so the actions can be dispatched.
 export const requestRobots = () => (dispatch) => {
 	dispatch({ type: REQUEST_ROBOTS_PENDING });
 

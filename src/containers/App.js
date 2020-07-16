@@ -25,12 +25,13 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
-		onRequestRobots: () => dispatch(requestRobots())
+		onRequestRobots: () => dispatch(requestRobots()) // Equivalent to requestRobots(dispatch) where requestRobots is expecting the dispatch function. s
 	}
 }
 
 // Syntax to be able to use state.
 class App extends Component {
+	// Constructor no longer needed now that state isn't stored in App component.
 	componentDidMount() {
 		this.props.onRequestRobots();
 	}
