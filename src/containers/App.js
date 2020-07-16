@@ -13,7 +13,7 @@ import { setSearchField, requestRobots } from '../actions';
 const mapStateToProps = (state) => {
 	return {
 		// aka state.searchField if only one reducer was in the store.
-		// Comes from the reducer, which is from the store.
+		// Comes from the reducer, which is from the store that is passed via Provider component.
 		searchField: state.searchRobots.searchField,
 		robots: state.requestRobots.robots,
 		isPending: state.requestRobots.pending,
