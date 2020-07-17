@@ -12,7 +12,8 @@ export const setSearchField = (text) => ({
 	payload: text
 })
 
-// Higher order function. 23:29 to watch again.
+// Higher order function. A function that returns a function.
+// Redux doesn't understand a function that returns a function, since it's looking for an object.
 // Redux thunk is listening for actions that return functions, so the actions can be dispatched.
 export const requestRobots = () => (dispatch) => {
 	dispatch({ type: REQUEST_ROBOTS_PENDING });
