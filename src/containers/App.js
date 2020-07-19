@@ -4,8 +4,6 @@ import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
 import ErrorBoundary from '../components/ErrorBoundary';
-//import { robots } from './robots';
-// Destructured variables since file can consist of multiple exports.
 import './App.css'
 
 import { setSearchField, requestRobots } from '../actions';
@@ -58,17 +56,5 @@ class App extends Component {
 			)
 	}
 }
-
-/*
-const App = () => {
-	return (
-		<div className='tc'>
-			<h1>RoboFriends</h1>
-			<SearchBox />
-			<CardList robots={robots} />
-		</div>
-	)
-}
-*/
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
